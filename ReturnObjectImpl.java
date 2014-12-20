@@ -22,13 +22,21 @@ public class ReturnObjectImpl implements ReturnObject {
 	@Override
 	public ErrorMessage getError() {
 		
-		return null;
+		return error;
 	}
 
 	@Override
 	public Object getReturnValue() {
 		
 		return returnValue;
+	}
+	
+	public void setReturnValue (Object data) {
+		returnValue = data;
+	}
+	
+	public void setErrorMessage (ErrorMessage error) {
+		this.error = error;
 	}
 	
 }
