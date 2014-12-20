@@ -7,6 +7,7 @@ public class ArrayList implements List {
 	
 	public ArrayList () {
 		size = 0;
+		array = new ReturnObjectImpl [10];
 	}
 	
 	@Override
@@ -49,11 +50,27 @@ public class ArrayList implements List {
 			return returnObject;
 		} else {
 		
-		array[size] = returnObject;
-		size++;		
+			array[size] = returnObject;
+			size++;
+			
+			if (size == array.length) {
+				array = DoubleArray(array);
+			}
 		
-		return new ReturnObjectImpl(null);
+			return new ReturnObjectImpl(null);
 		}
+	}
+
+	private ReturnObjectImpl[] DoubleArray(ReturnObjectImpl[] array2) {
+		
+		ReturnObjectImpl [] newArray = new ReturnObjectImpl [array2.length*2];
+		
+		for (int i =0; i<array2.length; i++) {
+			array2[i] = newArray[i];
+		}
+		
+		return newArray;
+		
 	} 
 
 }
