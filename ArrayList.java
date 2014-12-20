@@ -2,16 +2,23 @@ package cw3;
 
 public class ArrayList implements List {
 
+	private int size;
+	private ReturnObjectImpl [] array;
+	
+	public ArrayList () {
+		size = 0;
+	}
+	
 	@Override
 	public boolean isEmpty() {
 		
-		return false;
+		if (size == 0) return true; else return false;
 	}
 
 	@Override
 	public int size() {
 		
-		return 0;
+		return size;
 	}
 
 	@Override
@@ -35,7 +42,18 @@ public class ArrayList implements List {
 	@Override
 	public ReturnObject add(Object item) {
 
-		return null;
-	}
+		ReturnObjectImpl returnObject = new ReturnObjectImpl (item);
+		
+		if (item== null) {
+			returnObject.setErrorMessage(ErrorMessage.INVALID_ARGUMENT);
+			return returnObject;
+		} else {
+		
+		array[size] = returnObject;
+		size++;		
+		
+		return new ReturnObjectImpl(null);
+		}
+	} 
 
 }
