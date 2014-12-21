@@ -5,10 +5,16 @@ public class ReturnObjectImpl implements ReturnObject {
 	private ErrorMessage error;
 	private Object returnValue;
 
+
 	
 	public ReturnObjectImpl (Object data) {
 		returnValue = data;
 		error = ErrorMessage.NO_ERROR;
+	}
+	
+	public ReturnObjectImpl (ErrorMessage error) {
+		
+		this.error = error;
 	}
 	
 	@Override
