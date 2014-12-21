@@ -25,7 +25,11 @@ public class ArrayList implements List {
 	@Override
 	public ReturnObject get(int index) {
 		
-		return null;
+		if (index >=size|| index<0) {
+			return new ReturnObjectImpl (ErrorMessage.INDEX_OUT_OF_BOUNDS);
+		} else {
+			return array[index];
+		}
 	}
 
 	@Override
