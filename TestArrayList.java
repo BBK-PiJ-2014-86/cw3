@@ -22,6 +22,7 @@ public class TestArrayList {
 		
 		System.out.println(array.size());
 		System.out.println(array.isEmpty());
+		System.out.println(array.get(1).getReturnValue().toString());
 		
 	}
 
