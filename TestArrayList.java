@@ -18,6 +18,11 @@ public class TestArrayList {
 		System.out.println(array.size());
 		System.out.println(array.isEmpty());
 		
+		System.out.println(array.remove(1).getReturnValue().toString());
+		
+		System.out.println(array.size());
+		System.out.println(array.isEmpty());
+		
 	}
 
 }
