@@ -31,6 +31,41 @@ public class ArrayList implements List {
 	@Override
 	public ReturnObject remove(int index) {
 		
+		if (index >=size|| index<0) {
+			return new ReturnObjectImpl (ErrorMessage.INDEX_OUT_OF_BOUNDS);
+		} else {
+			ReturnObjectImpl removed = array[index];
+			array[index] = null;
+			size--;
+			array = copyAndResize(array,index,-1);
+			return removed;
+		}
+		
+	}
+
+	private ReturnObjectImpl[] copyAndResize(ReturnObjectImpl[] array2, int index, int i) {
+		
+		ReturnObjectImpl [] newArray;
+		
+		switch (i) {
+			case -1:
+			
+			newArray = new ReturnObjectImpl [size];
+			
+			for (int j = 0; j<index; j++) {
+				newArray[j] = array[j]; 
+			}
+			
+			for (int k = index; k<newArray.length; k++) {
+				newArray[k] = array[k+1];
+			}
+			
+			return newArray;
+			
+		case 1:
+		
+				break;
+		}
 		return null;
 	}
 
