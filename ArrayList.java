@@ -41,42 +41,64 @@ public class ArrayList implements List {
 			ReturnObjectImpl removed = array[index];
 			array[index] = null;
 			size--;
-			array = copyAndResize(array,index,-1);
+			array = copyAndResize(array,null,index,-1);
 			return removed;
 		}
 		
 	}
 
-	private ReturnObjectImpl[] copyAndResize(ReturnObjectImpl[] array2, int index, int i) {
+	private ReturnObjectImpl[] copyAndResize(ReturnObjectImpl[] array2, ReturnObjectImpl item, int index, int i) {
 		
+		System.out.println("Size is " + size);
 		ReturnObjectImpl [] newArray;
+		
+		newArray = new ReturnObjectImpl [size];
+		
+		for (int j = 0; j<index; j++) {
+			newArray[j] = array[j]; 
+		}
 		
 		switch (i) {
 			case -1:
+	
+				for (int k = index; k<newArray.length; k++) {
+					newArray[k] = array[k+1];
+				}
+				
+				return newArray;
 			
-			newArray = new ReturnObjectImpl [size];
-			
-			for (int j = 0; j<index; j++) {
-				newArray[j] = array[j]; 
-			}
-			
-			for (int k = index; k<newArray.length; k++) {
-				newArray[k] = array[k+1];
-			}
-			
-			return newArray;
-			
-		case 1:
+			case 1:
 		
-				break;
+				for (int m = index+1; m < newArray.length; m++) {
+					
+					newArray [m] = array[m-1];
+				}
+			
+				newArray[index] = item;
+				
+				return newArray;
+			
 		}
 		return null;
 	}
 
 	@Override
 	public ReturnObject add(int index, Object item) {
-
-		return null;
+			
+		ReturnObjectImpl addItem = new ReturnObjectImpl (item);
+		if (index >=size|| index<0) {
+			return new ReturnObjectImpl (ErrorMessage.INDEX_OUT_OF_BOUNDS);
+		} else if (array [index] != null) {
+			size++;
+			array = copyAndResize(array, addItem, index, 1);
+			return new ReturnObjectImpl (null);
+		} else {
+			size++;
+			array[index] = addItem;
+			return new ReturnObjectImpl (null);
+		}
+			
+		
 	}
 
 	@Override
