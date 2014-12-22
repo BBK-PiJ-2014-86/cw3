@@ -1,17 +1,21 @@
 package cw3;
 
 public class LinkedList implements List {
+	
+	private int size;
+	private ReturnObjectImpl head;
+	
 
 	@Override
 	public boolean isEmpty() {
 
-		return false;
+		if (size == 0) return true; else return false;
 	}
 
 	@Override
 	public int size() {
 		
-		return 0;
+		return size;
 	}
 
 	@Override
