@@ -21,8 +21,21 @@ public class TestArrayList {
 		
 
 		System.out.println(array.get(1).getReturnValue().toString());
-		array.add(1, "William Bevan");
+		System.out.println(array.remove(0).getReturnValue().toString());
+		array.add(0, "Happy Cycling");
+		array.add(0, "Dayvan Cowboy");
+		array.add(0, "Avril 14");
+		array.add(0, "An Eagle in your mind");
+		array.add(0, "1969");
+		array.add(0, "Rhubarb");
+		array.add(0, "444");
+		
 		System.out.println(array.get(1).getReturnValue().toString());
+		System.out.println(array.get(6).getReturnValue().toString());
+		
+		System.out.println(array.size());
+		
+
 		
 	}
 
