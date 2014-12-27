@@ -4,12 +4,14 @@ public class ReturnObjectImpl implements ReturnObject {
 	
 	private ErrorMessage error;
 	private Object returnValue;
+	private ReturnObjectImpl next;
 
 
 	
 	public ReturnObjectImpl (Object data) {
 		returnValue = data;
 		error = ErrorMessage.NO_ERROR;
+		next = null;
 	}
 	
 	public ReturnObjectImpl (ErrorMessage error) {
@@ -43,6 +45,15 @@ public class ReturnObjectImpl implements ReturnObject {
 	
 	public void setErrorMessage (ErrorMessage error) {
 		this.error = error;
+	}
+	
+	public ReturnObjectImpl getNext () {
+		return next;
+	}
+	
+	public void setNext(ReturnObjectImpl newNext) {
+		next = newNext;
+		
 	}
 	
 }
