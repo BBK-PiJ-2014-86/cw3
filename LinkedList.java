@@ -5,6 +5,12 @@ public class LinkedList implements List {
 	private int size;
 	private ReturnObjectImpl head;
 	
+	public LinkedList () {
+		
+		size = 0;
+		head = null;
+	}
+	
 
 	@Override
 	public boolean isEmpty() {
@@ -20,8 +26,17 @@ public class LinkedList implements List {
 
 	@Override
 	public ReturnObject get(int index) {
-
-		return null;
+		
+		ReturnObjectImpl iter = head;
+		System.out.println(size());
+		if (index >=size|| index<0) {
+			return new ReturnObjectImpl (ErrorMessage.INDEX_OUT_OF_BOUNDS);
+		} else {
+			for (int i = 0; i<index; i++) {
+				iter = iter.getNext();
+			}
+			return iter;
+		}
 	}
 
 	@Override
@@ -39,20 +54,21 @@ public class LinkedList implements List {
 	@Override
 	public ReturnObject add(Object item) {
 
-		ReturnObjectImpl iter = head;
+		ReturnObjectImpl iter;
 		
 		if (item == null) {
 			return new ReturnObjectImpl (ErrorMessage.INVALID_ARGUMENT);
-		} else if (iter == null) {
-		iter = (ReturnObjectImpl) item;
-		size++;
-		return new ReturnObjectImpl (null);
+		} else if (head == null) {
+			head = new ReturnObjectImpl(item);
+
+			size++;
+			return new ReturnObjectImpl (null);
 		} else {
-			
+			iter = head;
 			while (iter.getNext()!= null) {
 				iter = iter.getNext();
 			}
-			iter.setNext((ReturnObjectImpl) item);
+			iter.setNext(new ReturnObjectImpl(item));
 			size++;
 			return new ReturnObjectImpl (null);
 			}
