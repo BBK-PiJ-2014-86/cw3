@@ -13,7 +13,8 @@ public class TestLinkedList {
 		list.add("Untrue");
 		
 		System.out.println(list.get(1).getReturnValue());
-
+		System.out.println(list.remove(0).getReturnValue());
+		System.out.println(list.get(0).getReturnValue());
 	}
 
 }
