@@ -64,8 +64,33 @@ public class LinkedList implements List {
 
 	@Override
 	public ReturnObject add(int index, Object item) {
+		
+		ReturnObjectImpl iter;
 
-		return null;
+			
+		 if (index >=size || index<0) {
+			return new ReturnObjectImpl (ErrorMessage.INDEX_OUT_OF_BOUNDS);
+		} else if (item == null) {
+			return new ReturnObjectImpl (ErrorMessage.INVALID_ARGUMENT);
+		} else if (index == 0 && head != null) {
+			iter = new ReturnObjectImpl (item);
+			iter.setNext(head);
+			head = iter;
+			size ++;
+			return new ReturnObjectImpl (null);
+         } else {
+			iter = head;
+				for (int i = 0; i<index-1; i++) {
+					iter = iter.getNext();
+				}
+			ReturnObjectImpl temp = iter.getNext();
+			ReturnObjectImpl inserted = new ReturnObjectImpl (item);
+			iter.setNext(inserted);
+			inserted.setNext(temp);
+			size++;
+			return new ReturnObjectImpl (null);
+		}
+		
 	}
 
 	@Override
