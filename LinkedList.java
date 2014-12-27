@@ -39,7 +39,24 @@ public class LinkedList implements List {
 	@Override
 	public ReturnObject add(Object item) {
 
-		return null;
+		ReturnObjectImpl iter = head;
+		
+		if (item == null) {
+			return new ReturnObjectImpl (ErrorMessage.INVALID_ARGUMENT);
+		} else if (iter == null) {
+		iter = (ReturnObjectImpl) item;
+		size++;
+		return new ReturnObjectImpl (null);
+		} else {
+			
+			while (iter.getNext()!= null) {
+				iter = iter.getNext();
+			}
+			iter.setNext((ReturnObjectImpl) item);
+			size++;
+			return new ReturnObjectImpl (null);
+			}
+		
 	}
 
 }
