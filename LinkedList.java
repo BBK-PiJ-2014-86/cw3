@@ -28,7 +28,6 @@ public class LinkedList implements List {
 	public ReturnObject get(int index) {
 		
 		ReturnObjectImpl iter = head;
-		System.out.println(size());
 		if (index >=size|| index<0) {
 			return new ReturnObjectImpl (ErrorMessage.INDEX_OUT_OF_BOUNDS);
 		} else {
@@ -42,7 +41,25 @@ public class LinkedList implements List {
 	@Override
 	public ReturnObject remove(int index) {
 
-		return null;
+		ReturnObjectImpl iter = head;
+		if (index >=size|| index<0) {
+			return new ReturnObjectImpl (ErrorMessage.INDEX_OUT_OF_BOUNDS);
+		} else {
+			
+			if (index == 0) {
+				head = head.getNext();
+				size--;
+				return iter;
+			} else {
+				for (int i = 0; i<index-1; i++) {
+					iter = iter.getNext();
+				}
+				ReturnObjectImpl removed = iter.getNext();
+				iter.setNext(iter.getNext().getNext());
+				size--;
+				return removed;
+			}
+		}
 	}
 
 	@Override
