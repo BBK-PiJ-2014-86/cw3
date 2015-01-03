@@ -19,7 +19,19 @@ public class FunctionalLinkedList extends LinkedList implements FunctionalList {
 	@Override
 	public FunctionalList rest() {
 
-		return null;
+		FunctionalList fList = new FunctionalLinkedList();
+		if (isEmpty()) {
+			
+			return fList;
+		} else {
+			
+			for (int i=1; i<size();i++) {
+				fList.add(get(i).getReturnValue());
+			}
+			
+			return fList;
+		}
+		
 	}
 
 }
