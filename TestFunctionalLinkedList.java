@@ -4,7 +4,7 @@ public class TestFunctionalLinkedList {
 
 	public static void main(String[] args) {
 
-	FunctionalList testList = new FunctionalArrayList();
+	FunctionalList testList = new FunctionalLinkedList();
 		
 		testList.add("Ada Lovelace");
 		testList.add("Charles Babbage");
