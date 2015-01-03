@@ -5,7 +5,15 @@ public class FunctionalLinkedList extends LinkedList implements FunctionalList {
 	@Override
 	public ReturnObject head() {
 
-		return null;
+		if (isEmpty()) {
+			ReturnObject error = new ReturnObjectImpl (ErrorMessage.EMPTY_STRUCTURE);
+			return error;
+		} else {
+			ReturnObject headCopy = new ReturnObjectImpl (head.getReturnValue());
+			return headCopy;
+		
+		}
+		
 	}
 
 	@Override
