@@ -2,8 +2,8 @@ package cw3;
 
 public class ArrayList implements List {
 
-	private int size;
-	private ReturnObjectImpl [] array;
+	protected int size;
+	protected ReturnObjectImpl[] array;
 	
 	public ArrayList () {
 		size = 0;
@@ -49,7 +49,6 @@ public class ArrayList implements List {
 
 	private ReturnObjectImpl[] copyAndResize(ReturnObjectImpl[] array2, ReturnObjectImpl item, int index, int i) {
 		
-		System.out.println("Size is " + size);
 		ReturnObjectImpl [] newArray;
 		
 		newArray = new ReturnObjectImpl [size];
