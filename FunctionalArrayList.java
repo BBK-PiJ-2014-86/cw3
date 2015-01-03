@@ -17,7 +17,18 @@ public class FunctionalArrayList extends ArrayList implements FunctionalList {
 	@Override
 	public FunctionalList rest() {
 
-		return null;
+		FunctionalList fList = new FunctionalArrayList();
+		
+		if (isEmpty()) {
+			return fList;
+		} else {
+			for (int i = 1; i<size(); i++) {
+				fList.add(array[i].getReturnValue());
+			}
+			
+			return fList;
+		}
+		
 	}
 
 	
