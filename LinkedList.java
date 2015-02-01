@@ -3,7 +3,7 @@ package cw3;
 public class LinkedList implements List {
 	
 	private int size;
-	private ReturnObjectImpl head;
+	protected ReturnObjectImpl head;
 	
 	public LinkedList () {
 		
