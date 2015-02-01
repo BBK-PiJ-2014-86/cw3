@@ -7,7 +7,7 @@ public class ArrayList implements List {
 	
 	public ArrayList () {
 		size = 0;
-		array = new ReturnObjectImpl [10];
+		array = new ReturnObjectImpl [5];
 	}
 	
 	@Override
@@ -126,7 +126,7 @@ public class ArrayList implements List {
 		ReturnObjectImpl [] newArray = new ReturnObjectImpl [array2.length*2];
 		
 		for (int i =0; i<array2.length; i++) {
-			array2[i] = newArray[i];
+			newArray[i] = array2[i];
 		}
 		
 		return newArray;
