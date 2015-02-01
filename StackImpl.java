@@ -39,6 +39,10 @@ public class StackImpl extends AbstractStack{
 	@Override
 	public ReturnObject top() {
 		
+		
+		if (internalList.size() == 0) {
+			return new ReturnObjectImpl (ErrorMessage.EMPTY_STRUCTURE);
+		}
 		return internalList.get(internalList.size()-1);
 	}
 
