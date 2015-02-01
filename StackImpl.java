@@ -2,12 +2,6 @@ package cw3;
 
 public class StackImpl extends AbstractStack{
 	
-	// do I create size param to track the size of the stack or not? 
-	// size of the list must be visible - getSize?
-
-	//what if the list is empty?
-	//there is a thing called internalList which is of type List;
-	
 	public StackImpl(List list) {
 		super(list);
 		
@@ -49,7 +43,10 @@ public class StackImpl extends AbstractStack{
 	@Override
 	public ReturnObject pop() {
 		
-		return null;
+		if (internalList.size() == 0) {
+			return new ReturnObjectImpl (ErrorMessage.EMPTY_STRUCTURE);
+		}
+		return internalList.remove(internalList.size()-1);
 	}
 
 	
