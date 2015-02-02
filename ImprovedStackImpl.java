@@ -69,15 +69,17 @@ public class ImprovedStackImpl implements ImprovedStack{
 		}
 		
 		ReturnObject [] oldArray = ((ArrayList) list).getArray();
-		ReturnObject [] newArray = new ReturnObject [oldArray.length]; 
+		ReturnObject [] newArray = new ReturnObjectImpl [oldArray.length]; 
 		
-		for (int i = 0; i < oldArray.length;i++) {
-			newArray[(oldArray.length-1)-i] = oldArray[i]; 
+		for (int i = 0; i < list.size();i++) {
+
+			newArray[i] = oldArray[(list.size()-1)-i]; 
+			
 		}
 		
 		ArrayList newList = new ArrayList();
 		
-		newList.setArray(newArray);
+		newList.setArray(newArray,list.size());
 		
 		ImprovedStack reversedCopy = new ImprovedStackImpl (newList);
 		return reversedCopy;
@@ -88,7 +90,7 @@ public class ImprovedStackImpl implements ImprovedStack{
 	public void remove(Object object) {
 		
 		for (int i =0; i<list.size(); i++) {
-			if (list.get(i).equals(object)) {
+			if (list.get(i).getReturnValue().equals(object)) {
 				list.remove(i);
 			} 
 		}
