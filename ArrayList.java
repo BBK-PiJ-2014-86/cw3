@@ -100,6 +100,7 @@ public class ArrayList implements List {
 		
 	}
 
+
 	@Override
 	public ReturnObject add(Object item) {
 
@@ -131,6 +132,18 @@ public class ArrayList implements List {
 		
 		return newArray;
 		
-	} 
+	}
+	
+	public ReturnObject[] getArray () {
+		
+		return array;
+		
+	}
+	
+	public void setArray (ReturnObject[] array) {
+		
+		this.array = (ReturnObjectImpl[]) array;
+		
+	}
 
 }
