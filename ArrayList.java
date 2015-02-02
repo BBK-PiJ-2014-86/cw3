@@ -5,6 +5,11 @@ public class ArrayList implements List {
 	protected int size;
 	protected ReturnObjectImpl[] array;
 	
+	/**
+	 * Constructor:
+	 * The constructor for the ArrayList initialises the size of array at 0 and the array is created with initial length of 5
+	 */
+	
 	public ArrayList () {
 		size = 0;
 		array = new ReturnObjectImpl [5];
@@ -32,6 +37,14 @@ public class ArrayList implements List {
 		}
 	}
 
+	/**
+	 * {@inheritDoc}
+	 * <br>
+	 * <br>
+	 * The method calls another method {@see copyAndResize()} which provides an array without the removed element.
+	 *    
+	 */
+	
 	@Override
 	public ReturnObject remove(int index) {
 		
@@ -47,6 +60,17 @@ public class ArrayList implements List {
 		
 	}
 
+	/**
+	 * This method is used when adding or removing an element at a specified index. In the case of removing, the method will
+	 * overwrite the deleted element. In the case of adding, the method will add the new element and shift the elements
+	 * to the right of the added element  
+	 * 
+	 * @param (ReturnObjectImpl[]) array2 - array to be copied and resized
+	 * @param (ReturnObjectImpl) item - used only when adding an element. Null when deleting elements
+	 * @param  (int) index - index of where the element is being added or from where it is deleted
+	 * @param (int) i This specifies if the method will resize after adding or deleting : -1 when deleting elements, 1 when adding elements
+	 * @return an array of type ReturnObjectImpl [] 
+	 */
 	private ReturnObjectImpl[] copyAndResize(ReturnObjectImpl[] array2, ReturnObjectImpl item, int index, int i) {
 		
 		ReturnObjectImpl [] newArray;
@@ -80,6 +104,14 @@ public class ArrayList implements List {
 		}
 		return null;
 	}
+	
+	/**
+	 * {@inheritDoc}
+	 * <br>
+	 * <br>
+	 * The method calls another method {@see copyAndResize()} which provides an array with the added element.
+	 *    
+	 */
 
 	@Override
 	public ReturnObject add(int index, Object item) {
@@ -101,6 +133,15 @@ public class ArrayList implements List {
 	}
 
 
+	/**
+	 * {@inheritDoc}
+	 * <br>
+	 * <br>
+	 * The method checks if the array where the container objects are stored is full. If so, the array will double in size
+	 * @see doubleArray();
+	 *    
+	 */
+	
 	@Override
 	public ReturnObject add(Object item) {
 
@@ -115,14 +156,20 @@ public class ArrayList implements List {
 			size++;
 			
 			if (size == array.length) {
-				array = DoubleArray(array);
+				array = doubleArray(array);
 			}
 		
 			return new ReturnObjectImpl(null);
 		}
 	}
+	
+	/**
+	 * Copies the elements of the passed array, doubles its length and returns it 
+	 * @param (ReturnObjectImpl [] ) array2 
+	 * @return ReturnObjectImpl [] 
+	 */
 
-	private ReturnObjectImpl[] DoubleArray(ReturnObjectImpl[] array2) {
+	private ReturnObjectImpl[] doubleArray(ReturnObjectImpl[] array2) {
 		
 		ReturnObjectImpl [] newArray = new ReturnObjectImpl [array2.length*2];
 		
@@ -134,11 +181,22 @@ public class ArrayList implements List {
 		
 	}
 	
+	/**
+	 * Returns the array object where wrapper objects are stored
+	 * @return array of type ReturnObject[]
+	 */
+	
 	public ReturnObject[] getArray () {
 		
 		return array;
 		
 	}
+	
+	/**
+	 * Sets the array field to the provided array and sets the size of how many actual wrapper objects are stored in the array
+	 * @param array
+	 * @param size
+	 */
 	
 	public void setArray (ReturnObject[] array, int size) {
 		
