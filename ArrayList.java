@@ -21,18 +21,28 @@ public class ArrayList implements List {
 		size = 0;
 		array = new ReturnObjectImpl [5];
 	}
-	
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public boolean isEmpty() {
 		
 		if (size == 0) return true; else return false;
 	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
 
 	@Override
 	public int size() {
 		
 		return size;
 	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
 
 	@Override
 	public ReturnObject get(int index) {
@@ -202,7 +212,7 @@ public class ArrayList implements List {
 	/**
 	 * Sets the array field to the provided array and sets the size of how many actual wrapper objects are stored in the array
 	 * @param array
-	 * @param size
+	 * @param size - sets the size of the array, ie how many actual elements are there.
 	 */
 	
 	public void setArray (ReturnObject[] array, int size) {
