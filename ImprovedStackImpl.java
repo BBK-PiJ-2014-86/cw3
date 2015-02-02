@@ -2,17 +2,21 @@ package cw3;
 
 public class ImprovedStackImpl implements ImprovedStack{
 	
-	private List stack;
+	private List list;
 	
 	
 	public ImprovedStackImpl () {
-		stack = new ArrayList();
+		list = new ArrayList();
+	}
+	
+	public ImprovedStackImpl (List list) {
+		this.list = list;
 	}
 
 	@Override
 	public boolean isEmpty() {
 		
-		if(stack.size() == 0) {
+		if(list.size() == 0) {
 			return true;
 		} else {
 			return false;
@@ -22,7 +26,7 @@ public class ImprovedStackImpl implements ImprovedStack{
 	@Override
 	public int size() {
 	
-		return stack.size();
+		return list.size();
 	}
 
 	@Override
@@ -31,7 +35,7 @@ public class ImprovedStackImpl implements ImprovedStack{
 		if (item == null) {
 			return;
 		} else {
-			stack.add(item);
+			list.add(item);
 		}
 		
 	}
@@ -43,7 +47,7 @@ public class ImprovedStackImpl implements ImprovedStack{
 		if (isEmpty()) {
 			return new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE);
 		} else {
-			return stack.get(stack.size()-1);
+			return list.get(list.size()-1);
 		}
 	}
 
@@ -53,14 +57,31 @@ public class ImprovedStackImpl implements ImprovedStack{
 		if (isEmpty()) {
 			return new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE);
 		} else {
-			return stack.remove(stack.size()-1);
+			return list.remove(list.size()-1);
 		}
 	}
 
 	@Override
 	public ImprovedStack reverse() {
 		
-		return null;
+		if (isEmpty()) {
+			return null;
+		}
+		
+		ReturnObject [] oldArray = ((ArrayList) list).getArray();
+		ReturnObject [] newArray = new ReturnObject [oldArray.length]; 
+		
+		for (int i = 0; i < oldArray.length;i++) {
+			newArray[(oldArray.length-1)-i] = oldArray[i]; 
+		}
+		
+		ArrayList newList = new ArrayList();
+		
+		newList.setArray(newArray);
+		
+		ImprovedStack reversedCopy = new ImprovedStackImpl (newList);
+		return reversedCopy;
+		
 	}
 
 	@Override
@@ -68,6 +89,8 @@ public class ImprovedStackImpl implements ImprovedStack{
 		
 		
 	}
+	
+
 	
 	
 
