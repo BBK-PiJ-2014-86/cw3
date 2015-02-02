@@ -58,9 +58,19 @@ public class ReturnObjectImpl implements ReturnObject {
 		this.error = error;
 	}
 	
+	/**
+	 * returns the next element stored 
+	 * @return returns ReturnObjectImpl
+	 */
+	
 	public ReturnObjectImpl getNext () {
 		return next;
 	}
+	
+	/**
+	 * sets the next element to be stored
+	 * @param ReturnObjectImpl
+	 */
 	
 	public void setNext(ReturnObjectImpl newNext) {
 		next = newNext;
