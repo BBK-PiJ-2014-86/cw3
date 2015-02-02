@@ -13,12 +13,19 @@ public class LinkedList implements List {
 	private int size;
 	protected ReturnObjectImpl head;
 	
+	/**
+	 * Constructor: initialises the size of the list to 0 and head to null
+	 */
+	
 	public LinkedList () {
 		
 		size = 0;
 		head = null;
 	}
 	
+	/**
+	 * {@inheritDoc}
+	 */
 
 	@Override
 	public boolean isEmpty() {
@@ -26,11 +33,19 @@ public class LinkedList implements List {
 		if (size == 0) return true; else return false;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
+	
 	@Override
 	public int size() {
 		
 		return size;
 	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
 
 	@Override
 	public ReturnObject get(int index) {
@@ -45,6 +60,10 @@ public class LinkedList implements List {
 			return iter;
 		}
 	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
 
 	@Override
 	public ReturnObject remove(int index) {
@@ -69,6 +88,10 @@ public class LinkedList implements List {
 			}
 		}
 	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
 
 	@Override
 	public ReturnObject add(int index, Object item) {
@@ -100,6 +123,10 @@ public class LinkedList implements List {
 		}
 		
 	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
 
 	@Override
 	public ReturnObject add(Object item) {
