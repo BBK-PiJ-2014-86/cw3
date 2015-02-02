@@ -40,6 +40,30 @@ public class TestArrayList {
 	}
 	
 	@Test
+	public void testIsEmptyAfterAddingAndRemoving() {
+		
+		myList.add("1");
+		myList.add("2");
+		myList.add("3");
+		myList.add("4");
+		myList.add("5");
+		myList.add("6");
+		
+		myList.remove(0);
+		myList.remove(0);
+		myList.remove(0);
+		myList.remove(0);
+		myList.remove(0);
+		myList.remove(0);
+		
+	
+		assertEquals(0,myList.size());
+		
+	}
+	
+	
+	
+	@Test
 	public void testAddNormal () {
 	
 		myList.add("1");
