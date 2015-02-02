@@ -140,9 +140,10 @@ public class ArrayList implements List {
 		
 	}
 	
-	public void setArray (ReturnObject[] array) {
+	public void setArray (ReturnObject[] array, int size) {
 		
 		this.array = (ReturnObjectImpl[]) array;
+		this.size=size;
 		
 	}
 
