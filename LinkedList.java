@@ -1,5 +1,13 @@
 package cw3;
 
+/**
+ * The class implements List {@see List} and creates a linked lists of Object instances wrapped in objects of type ReturnObject 
+ * {@see ReturnObject}
+ *  
+ * @author ageorgiev
+ *
+ */
+
 public class LinkedList implements List {
 	
 	private int size;

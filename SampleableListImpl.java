@@ -1,5 +1,11 @@
 package cw3;
 
+/**
+ * The class implements @see SampleableList and extends @see LinkedList
+ * @author ageorgiev
+ *
+ */
+
 public class SampleableListImpl extends LinkedList implements SampleableList{
 
 	@Override

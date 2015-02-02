@@ -1,5 +1,12 @@
 package cw3;
 
+/**
+ * The class implements List {@see List} and creates an array list of Object instances wrapped in objects of type ReturnObject 
+ * {@see ReturnObject}
+ * @author ageorgiev
+ *
+ */
+
 public class ArrayList implements List {
 
 	protected int size;

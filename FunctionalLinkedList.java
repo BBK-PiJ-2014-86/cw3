@@ -1,5 +1,10 @@
 package cw3;
 
+/**
+ * The class extends @see LinkedList and implements @see FunctionalList
+ * @author ageorgiev
+ */
+
 public class FunctionalLinkedList extends LinkedList implements FunctionalList {
 
 	@Override

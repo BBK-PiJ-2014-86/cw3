@@ -1,11 +1,16 @@
 package cw3;
 
+/** 
+ * The class extends AbstractStack
+ * @author ageorgiev
+ *
+ */
+
 public class StackImpl extends AbstractStack{
 	
 	public StackImpl(List list) {
 		super(list);
 		
-
 	}
 
 	@Override

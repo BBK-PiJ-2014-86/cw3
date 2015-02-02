@@ -1,5 +1,10 @@
 package cw3;
 
+/**
+ * The class extends @see ArrayList and implements @see FunctionalList
+ * @author ageorgiev
+ */
+
 public class FunctionalArrayList extends ArrayList implements FunctionalList {
 	
 	@Override
