@@ -18,6 +18,7 @@ public class ReturnObjectImpl implements ReturnObject {
 		
 		this.error = error;
 	}
+
 	
 	@Override
 	public boolean hasError() {
@@ -39,9 +40,19 @@ public class ReturnObjectImpl implements ReturnObject {
 		return returnValue;
 	}
 	
+	/**
+	 * sets the the object to be wrapped within the container class
+	 * @param
+	 */
+	
 	public void setReturnValue (Object data) {
 		returnValue = data;
 	}
+	
+	/**
+	 * sets the ErrorMessage to be contained within the instance
+	 * @param ErrorMessage
+	 */
 	
 	public void setErrorMessage (ErrorMessage error) {
 		this.error = error;
