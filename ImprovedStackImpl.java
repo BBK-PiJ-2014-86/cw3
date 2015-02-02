@@ -87,6 +87,11 @@ public class ImprovedStackImpl implements ImprovedStack{
 	@Override
 	public void remove(Object object) {
 		
+		for (int i =0; i<list.size(); i++) {
+			if (list.get(i).equals(object)) {
+				list.remove(i);
+			} 
+		}
 		
 	}
 	
