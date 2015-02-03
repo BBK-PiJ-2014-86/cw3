@@ -13,6 +13,10 @@ public class ImprovedStackImpl implements ImprovedStack{
 		this.list = list;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
+	
 	@Override
 	public boolean isEmpty() {
 		
@@ -22,12 +26,20 @@ public class ImprovedStackImpl implements ImprovedStack{
 			return false;
 		}
 	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
 
 	@Override
 	public int size() {
 	
 		return list.size();
 	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
 
 	@Override
 	public void push(Object item) {
@@ -40,6 +52,10 @@ public class ImprovedStackImpl implements ImprovedStack{
 		
 	}
 	
+	/**
+	 * {@inheritDoc}
+	 */
+	
 
 	@Override
 	public ReturnObject top() {
@@ -50,6 +66,10 @@ public class ImprovedStackImpl implements ImprovedStack{
 			return list.get(list.size()-1);
 		}
 	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
 
 	@Override
 	public ReturnObject pop() {
@@ -60,6 +80,10 @@ public class ImprovedStackImpl implements ImprovedStack{
 			return list.remove(list.size()-1);
 		}
 	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
 
 	@Override
 	public ImprovedStack reverse() {
@@ -85,6 +109,10 @@ public class ImprovedStackImpl implements ImprovedStack{
 		return reversedCopy;
 		
 	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
 
 	@Override
 	public void remove(Object object) {
