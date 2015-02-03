@@ -7,6 +7,10 @@ package cw3;
 
 public class FunctionalArrayList extends ArrayList implements FunctionalList {
 	
+	/**
+	 * {@inheritDoc}
+	 */
+	
 	@Override
 	public ReturnObject head() {
 
@@ -18,6 +22,10 @@ public class FunctionalArrayList extends ArrayList implements FunctionalList {
 			 return head;
 		 }
 	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
 
 	@Override
 	public FunctionalList rest() {
