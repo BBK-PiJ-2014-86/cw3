@@ -12,6 +12,10 @@ public class StackImpl extends AbstractStack{
 		super(list);
 		
 	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
 
 	@Override
 	public boolean isEmpty() {
@@ -22,12 +26,19 @@ public class StackImpl extends AbstractStack{
 			return false;
 		}
 	}
+	/**
+	 * {@inheritDoc}
+	 */
 
 	@Override
 	public int size() {
 
 		return internalList.size();
 	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
 
 	@Override
 	public void push(Object item) {
@@ -38,6 +49,10 @@ public class StackImpl extends AbstractStack{
 		  internalList.add(item);
 		  }
 	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
 
 	@Override
 	public ReturnObject top() {
@@ -48,6 +63,10 @@ public class StackImpl extends AbstractStack{
 		}
 		return internalList.get(internalList.size()-1);
 	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
 
 	@Override
 	public ReturnObject pop() {
