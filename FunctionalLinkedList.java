@@ -7,6 +7,10 @@ package cw3;
 
 public class FunctionalLinkedList extends LinkedList implements FunctionalList {
 
+	
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public ReturnObject head() {
 
@@ -20,6 +24,10 @@ public class FunctionalLinkedList extends LinkedList implements FunctionalList {
 		}
 		
 	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
 
 	@Override
 	public FunctionalList rest() {
